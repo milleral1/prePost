@@ -1,5 +1,5 @@
 (function() {
-
+//miller
   function Config(stateProvider, urlRouterProvider) {
     stateProvider
       .state('app.feed', {
