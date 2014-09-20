@@ -21,6 +21,11 @@
       _this.modal2Selected = function (postId) {
           _this.post = Posts.get(postId);
           _this.modal2.show();
+      };
+
+      _this.modalSelected = function (postId) {
+          _this.post = Posts.get(postId);
+          _this.modal.show();
       }
   }
     FeedCtrl.$inject = ['$log', 'Posts', '$scope','$ionicModal'];

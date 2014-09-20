@@ -12,17 +12,17 @@
         <div class="row">
             <div class="col">
                 <div class="list">
-                    <a class="item item-avatar checked" ng-repeat="post in feed.posts">
-                        <img ng-src='{{post.user.image}}'>
-                        <h2>{{post.user.name}}</h2>
+                    <a class="item item-avatar checked" ng-repeat="user in feed.post.yes">
+                        <img ng-src='{{user.image}}'>
+                        <h2>{{user.name}}</h2>
                     </a>
                 </div>
             </div>
             <div class="col">
                 <div class="list">
-                    <a class="item item-avatar unchecked" ng-repeat="post in feed.posts">
-                        <img ng-src='{{post.user.image}}'>
-                        <h2>{{post.user.name}}</h2>
+                    <a class="item item-avatar unchecked" ng-repeat="user in feed.post.no">
+                        <img ng-src='{{user.image}}'>
+                        <h2>{{user.name}}</h2>
                     </a>
                 </div>
             </div>
