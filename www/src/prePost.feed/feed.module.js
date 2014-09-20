@@ -7,7 +7,7 @@
         views: {
           'tab-feed': {
             templateUrl: 'src/prePost.feed/feed.html',
-            controller: 'FeedCtrl'
+            controller: 'FeedCtrl as feed'
           }
         }
       })

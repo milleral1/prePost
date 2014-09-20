@@ -1,7 +1,7 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title">YES VS. NO</h1>
-        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        <button class="button button-clear button-primary" ng-click="feed.modal.hide()">Cancel</button>
     </ion-header-bar>
     <ion-content class="padding">
         <div class="row">
@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col">
                 <div class="list">
-                    <a class="item item-avatar checked" ng-repeat="post in posts">
+                    <a class="item item-avatar checked" ng-repeat="post in feed.posts">
                         <img ng-src='{{post.user.image}}'>
                         <h2>{{post.user.name}}</h2>
                     </a>
@@ -20,7 +20,7 @@
             </div>
             <div class="col">
                 <div class="list">
-                    <a class="item item-avatar unchecked" ng-repeat="post in posts">
+                    <a class="item item-avatar unchecked" ng-repeat="post in feed.posts">
                         <img ng-src='{{post.user.image}}'>
                         <h2>{{post.user.name}}</h2>
                     </a>
