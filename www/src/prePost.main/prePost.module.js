@@ -10,9 +10,16 @@
   /**
   The Run function
   **/
-  function Run(ionicPlatform, rootScope, log, $window) {
+  function Run(ionicPlatform, rootScope, log, $window, $state) {
     rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-      log.debug('state change', {'to state': toState,'to params': toParams,'from state': fromState,'from params': fromParams});
+        log.debug('state change', {'to state': toState,'to params': toParams,'from state': fromState,'from params': fromParams});
+
+        // maybe better to put in the prePost.auth folder...
+        if(toState.name!='signIn' && toState.name!='signUp'){
+            rootScope.error='Access denied';
+            $state.go('signIn');
+            event.preventDefault();
+        }
     });
 
     ionicPlatform.ready(function() {
@@ -26,7 +33,7 @@
     });
   }
     //injecting dependencies into the Run function
-    Run.$inject = ['$ionicPlatform', '$rootScope', '$log', '$window'];
+    Run.$inject = ['$ionicPlatform', '$rootScope', '$log', '$window','$state'];
 
 
   /**
@@ -44,6 +51,8 @@
         abstract: true,
         templateUrl: "src/prePost.main/tabs.html"
       })
+
+
     // if none of the above states are matched, use this as the fallback
   }
     //injecting dependencies into the Config function
@@ -54,7 +63,8 @@
     'prePost.upload',
     'prePost.feed',
     'prePost.selector',
-    'prePost.profile'
+    'prePost.profile',
+     'prePost.auth'
     ])
     .run(Run)
     .config(Config)

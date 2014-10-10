@@ -2,6 +2,7 @@
 
   function SelectorCtrl(log) {
     log.debug('Selector Controller!!!');
+    this.test = 'dodo';
   }
 
     SelectorCtrl.$inject = ['$log'];
